@@ -867,12 +867,12 @@ function SingleChart({
             </defs>
 
             <ReferenceArea
-              y1={lab.normalLow}
-              y2={lab.normalHigh}
-              fill="#ffffff"
-              fillOpacity={0.42}
-              strokeOpacity={0}
-            />
+  y1={lab.normalLow}
+  y2={lab.normalHigh}
+  fill={design.accent}
+  fillOpacity={0.08}
+  strokeOpacity={0}
+/>
 
             <XAxis
               dataKey="date"
@@ -967,12 +967,12 @@ function CompareChart({
             </defs>
 
             <ReferenceArea
-              y1={referenceLab.normalLow}
-              y2={referenceLab.normalHigh}
-              fill="#ffffff"
-              fillOpacity={0.38}
-              strokeOpacity={0}
-            />
+  y1={referenceLab.normalLow}
+  y2={referenceLab.normalHigh}
+  fill={design.accent}
+  fillOpacity={0.06}
+  strokeOpacity={0}
+/>
 
             <XAxis
               dataKey="date"
