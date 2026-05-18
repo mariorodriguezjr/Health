@@ -554,13 +554,22 @@ function KpiCard({
   sub: string;
 }) {
   return (
-    <div className="rounded-[2rem] border border-white/70 bg-white/65 p-5 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-3xl">
-      <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-white shadow-lg">
+    <div className="rounded-[1.5rem] border border-white/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-3xl sm:rounded-[2rem] sm:p-5">
+      <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-white shadow-lg sm:mb-5 sm:h-11 sm:w-11 sm:rounded-2xl">
         {icon}
       </div>
-      <p className="text-sm font-medium text-slate-500">{label}</p>
-      <p className="mt-1 text-4xl font-semibold tracking-[-0.05em]">{value}</p>
-      <p className="mt-2 text-sm text-slate-400">{sub}</p>
+
+      <p className="text-xs font-medium text-slate-500 sm:text-sm">
+        {label}
+      </p>
+
+      <p className="mt-1 text-3xl font-semibold tracking-[-0.05em] sm:text-4xl">
+        {value}
+      </p>
+
+      <p className="mt-1 text-xs text-slate-400 sm:mt-2 sm:text-sm">
+        {sub}
+      </p>
     </div>
   );
 }
