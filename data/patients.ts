@@ -28,6 +28,9 @@ export const patients = {
 
       { date: "2025-04-17", marker: "TSH", value: 1.98, unit: "mIU/L", normalLow: 0.4, normalHigh: 4.5, category: "Thyroid" },
       { date: "2026-01-30", marker: "TSH", value: 1.96, unit: "mIU/L", normalLow: 0.4, normalHigh: 4.5, category: "Thyroid" },
+
+      { date: "2025-04-17", marker: "Free T4", value: 1.2, unit: "ng/dL", normalLow: 0.8, normalHigh: 1.8, category: "Thyroid" },
+      { date: "2026-01-30", marker: "Free T4", value: 1.1, unit: "ng/dL", normalLow: 0.8, normalHigh: 1.8, category: "Thyroid" },
     ],
   },
 
@@ -35,20 +38,37 @@ export const patients = {
     name: "Cici",
     labs: [
       { date: "2025-01-20", marker: "A1C", value: 5.1, unit: "%", normalLow: 4.0, normalHigh: 5.6, category: "Glucose" },
+      { date: "2026-01-30", marker: "A1C", value: 5.0, unit: "%", normalLow: 4.0, normalHigh: 5.6, category: "Glucose" },
+
       { date: "2025-01-20", marker: "Glucose", value: 84, unit: "mg/dL", normalLow: 65, normalHigh: 99, category: "Glucose" },
+      { date: "2026-01-30", marker: "Glucose", value: 78, unit: "mg/dL", normalLow: 65, normalHigh: 99, category: "Glucose" },
 
       { date: "2025-01-20", marker: "LDL", value: 95, unit: "mg/dL", normalLow: 0, normalHigh: 99, category: "Cholesterol" },
+      { date: "2026-01-30", marker: "LDL", value: 112, unit: "mg/dL", normalLow: 0, normalHigh: 99, category: "Cholesterol" },
+
       { date: "2025-01-20", marker: "HDL", value: 91, unit: "mg/dL", normalLow: 50, normalHigh: 100, category: "Cholesterol" },
+      { date: "2026-01-30", marker: "HDL", value: 84, unit: "mg/dL", normalLow: 50, normalHigh: 100, category: "Cholesterol" },
+
       { date: "2025-01-20", marker: "Triglycerides", value: 52, unit: "mg/dL", normalLow: 0, normalHigh: 150, category: "Cholesterol" },
+      { date: "2026-01-30", marker: "Triglycerides", value: 73, unit: "mg/dL", normalLow: 0, normalHigh: 150, category: "Cholesterol" },
 
       { date: "2025-01-20", marker: "Creatinine", value: 0.72, unit: "mg/dL", normalLow: 0.5, normalHigh: 0.96, category: "Kidney" },
+      { date: "2026-01-30", marker: "Creatinine", value: 0.71, unit: "mg/dL", normalLow: 0.5, normalHigh: 0.96, category: "Kidney" },
 
       { date: "2025-01-20", marker: "AST", value: 22, unit: "U/L", normalLow: 10, normalHigh: 30, category: "Liver" },
+      { date: "2026-01-30", marker: "AST", value: 20, unit: "U/L", normalLow: 10, normalHigh: 30, category: "Liver" },
+
       { date: "2025-01-20", marker: "ALT", value: 24, unit: "U/L", normalLow: 6, normalHigh: 29, category: "Liver" },
+      { date: "2026-01-30", marker: "ALT", value: 16, unit: "U/L", normalLow: 6, normalHigh: 29, category: "Liver" },
 
       { date: "2025-01-20", marker: "TSH", value: 1.21, unit: "mIU/L", normalLow: 0.4, normalHigh: 4.5, category: "Thyroid" },
+      { date: "2026-01-30", marker: "TSH", value: 2.06, unit: "mIU/L", normalLow: 0.4, normalHigh: 4.5, category: "Thyroid" },
+
+      { date: "2025-01-20", marker: "Free T4", value: 1.1, unit: "ng/dL", normalLow: 0.8, normalHigh: 1.8, category: "Thyroid" },
+      { date: "2026-01-30", marker: "Free T4", value: 1.2, unit: "ng/dL", normalLow: 0.8, normalHigh: 1.8, category: "Thyroid" },
 
       { date: "2025-01-20", marker: "Vitamin D", value: 24, unit: "ng/mL", normalLow: 30, normalHigh: 100, category: "Vitamins" },
+      { date: "2026-01-30", marker: "Vitamin D", value: 32, unit: "ng/mL", normalLow: 30, normalHigh: 100, category: "Vitamins" },
     ],
   },
 };
@@ -63,6 +83,7 @@ export const trackedMarkers = [
   "AST",
   "ALT",
   "TSH",
+  "Free T4",
   "Vitamin D",
 ];
 

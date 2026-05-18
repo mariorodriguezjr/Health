@@ -116,6 +116,14 @@ const markerDesign: Record<
     goodDirection: "neutral",
     category: "Thyroid",
   },
+  "Free T4": {
+  accent: "#6366F1",
+  soft: "#E0E7FF",
+  glow: "rgba(99,102,241,0.22)",
+  description: "Active thyroid hormone",
+  goodDirection: "neutral",
+  category: "Thyroid",
+},
   "Vitamin D": {
     accent: "#F59E0B",
     soft: "#FEF3C7",
