@@ -340,7 +340,7 @@ export default function Home() {
       </div>
 
       <section className="relative mx-auto max-w-7xl px-5 py-7 sm:px-8 lg:px-10">
-        <header className="mb-6 rounded-[2.5rem] border border-white/70 bg-white/55 p-6 shadow-[0_30px_90px_rgba(15,23,42,0.08)] backdrop-blur-3xl transition-colors duration-500 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
+      <header className="mb-5 rounded-[2rem] border border-white/70 bg-white/55 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.08)] backdrop-blur-3xl transition-colors duration-500 sm:mb-6 sm:rounded-[2.5rem] sm:p-6 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_30px_90px_rgba(0,0,0,0.45)]">
           <div className="mb-7 flex w-fit rounded-full border border-white/80 bg-white/70 p-1 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06]">
             {(["mario", "cici", "compare"] as ViewMode[]).map((key) => (
               <button
@@ -366,7 +366,7 @@ export default function Home() {
                 Biometric intelligence
               </div>
 
-              <h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-6xl dark:text-white">
+              <h1 className="max-w-3xl text-3xl font-semibold tracking-[-0.04em] text-slate-950 sm:text-6xl dark:text-white">
                 {isCompare
                   ? "Mario + Cici biometrics"
                   : `${patient?.name}’s metabolic picture, beautifully tracked.`}
@@ -446,7 +446,7 @@ function IndividualDashboard({
 }) {
   return (
     <>
-      <section className="mb-6 grid gap-3 md:grid-cols-4 md:gap-4">
+     <section className="mb-5 grid grid-cols-2 gap-3 md:mb-6 md:grid-cols-4 md:gap-4">
         <KpiCard
           icon={<HeartPulse size={20} />}
           label="Optimal markers"
@@ -501,66 +501,23 @@ function CompareDashboard({
   compareStats: ReturnType<typeof getCompareStats>;
 }) {
   return (
-    <>
-      <section className="mb-6 grid gap-3 md:grid-cols-4 md:gap-4">
-        <KpiCard
-          icon={<Users size={20} />}
-          label="Shared markers"
-          value={String(compareStats.shared.length)}
-          sub="Available for comparison"
-        />
-        <KpiCard
-          icon={<HeartPulse size={20} />}
-          label="Closest match"
-          value={compareStats.closest?.marker ?? "—"}
-          sub={
-            compareStats.closest
-              ? `${compareStats.closest.diff.toFixed(2)} apart`
-              : "No overlap yet"
-          }
-        />
-        <KpiCard
-          icon={<Activity size={20} />}
-          label="Largest variance"
-          value={compareStats.largest?.marker ?? "—"}
-          sub={
-            compareStats.largest
-              ? `${compareStats.largest.diff.toFixed(2)} apart`
-              : "No overlap yet"
-          }
-        />
-        <KpiCard
-          icon={<Calendar size={20} />}
-          label="Profiles"
-          value="2"
-          sub="Mario + Cici"
-        />
-      </section>
-
-      <section className="rounded-[2.5rem] border border-white/70 bg-white/50 p-5 shadow-[0_30px_90px_rgba(15,23,42,0.08)] backdrop-blur-3xl sm:p-6 dark:border-white/10 dark:bg-white/[0.05] dark:shadow-[0_30px_90px_rgba(0,0,0,0.42)]">
-        <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <h2 className="text-2xl font-semibold tracking-[-0.03em] text-slate-950 dark:text-white">
-              Shared biomarker comparison
-            </h2>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              Graphite represents Mario. Soft gold represents Cici.
-            </p>
-          </div>
-
-          <div className="flex w-fit gap-2 rounded-full bg-white/70 p-1 shadow-sm ring-1 ring-black/5 dark:bg-white/[0.06] dark:ring-white/10">
-            <LegendDot color={compareColors.mario} label="Mario" />
-            <LegendDot color={compareColors.cici} label="Cici" />
-          </div>
-        </div>
-
-        <div className="grid gap-5 lg:grid-cols-3">
-          {trackedMarkers.map((marker) => (
-            <CompareCard key={marker} marker={marker} />
-          ))}
-        </div>
-      </section>
-    </>
+    <div className="rounded-[1.25rem] border border-white/70 bg-white/65 p-3 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-3xl sm:rounded-[2rem] sm:p-5 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_18px_60px_rgba(0,0,0,0.38)]">
+      <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-xl bg-slate-950 text-white shadow-lg sm:mb-5 sm:h-11 sm:w-11 sm:rounded-2xl dark:bg-white dark:text-slate-950">
+        {icon}
+      </div>
+  
+      <p className="text-[11px] font-medium leading-tight text-slate-500 sm:text-sm dark:text-slate-400">
+        {label}
+      </p>
+  
+      <p className="mt-1 text-2xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl dark:text-white">
+        {value}
+      </p>
+  
+      <p className="mt-0.5 text-[10px] leading-tight text-slate-400 sm:mt-2 sm:text-sm dark:text-slate-500">
+        {sub}
+      </p>
+    </div>
   );
 }
 
