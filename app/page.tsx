@@ -559,20 +559,20 @@ function KpiCard({
   sub: string;
 }) {
   return (
-    <div className="rounded-[1.5rem] border border-white/70 bg-white/65 p-4 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-3xl sm:rounded-[2rem] sm:p-5 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_18px_60px_rgba(0,0,0,0.38)]">
-      <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-xl bg-slate-950 text-white shadow-lg sm:mb-5 sm:h-11 sm:w-11 sm:rounded-2xl dark:bg-white dark:text-slate-950">
+    <div className="rounded-[1.25rem] border border-white/70 bg-white/65 p-3 shadow-[0_18px_60px_rgba(15,23,42,0.06)] backdrop-blur-3xl sm:rounded-[2rem] sm:p-5 dark:border-white/10 dark:bg-white/[0.06] dark:shadow-[0_18px_60px_rgba(0,0,0,0.38)]">
+      <div className="mb-2 flex h-8 w-8 items-center justify-center rounded-xl bg-slate-950 text-white shadow-lg sm:mb-5 sm:h-11 sm:w-11 sm:rounded-2xl dark:bg-white dark:text-slate-950">
         {icon}
       </div>
 
-      <p className="text-xs font-medium text-slate-500 sm:text-sm dark:text-slate-400">
+      <p className="text-[11px] font-medium leading-tight text-slate-500 sm:text-sm dark:text-slate-400">
         {label}
       </p>
 
-      <p className="mt-1 text-3xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl dark:text-white">
+      <p className="mt-1 text-2xl font-semibold tracking-[-0.05em] text-slate-950 sm:text-4xl dark:text-white">
         {value}
       </p>
 
-      <p className="mt-1 text-xs text-slate-400 sm:mt-2 sm:text-sm dark:text-slate-500">
+      <p className="mt-0.5 text-[10px] leading-tight text-slate-400 sm:mt-2 sm:text-sm dark:text-slate-500">
         {sub}
       </p>
     </div>
