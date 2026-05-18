@@ -185,15 +185,29 @@ function getCompareHistory(marker: string) {
   const marioHistory = patients.mario.labs.filter((lab) => lab.marker === marker);
   const ciciHistory = patients.cici.labs.filter((lab) => lab.marker === marker);
 
-  const dates = Array.from(
-    new Set([...marioHistory, ...ciciHistory].map((lab) => lab.date))
-  ).sort((a, b) => new Date(a).getTime() - new Date(b).getTime());
+  const years = Array.from(
+    new Set(
+      [...marioHistory, ...ciciHistory].map((lab) =>
+        new Date(lab.date).getFullYear().toString()
+      )
+    )
+  ).sort();
 
-  return dates.map((date) => ({
-    date: formatDate(date),
-    Mario: marioHistory.find((lab) => lab.date === date)?.value ?? null,
-    Cici: ciciHistory.find((lab) => lab.date === date)?.value ?? null,
-  }));
+  return years.map((year) => {
+    const marioYearLabs = marioHistory.filter(
+      (lab) => new Date(lab.date).getFullYear().toString() === year
+    );
+
+    const ciciYearLabs = ciciHistory.filter(
+      (lab) => new Date(lab.date).getFullYear().toString() === year
+    );
+
+    return {
+      date: year,
+      Mario: marioYearLabs.at(-1)?.value ?? null,
+      Cici: ciciYearLabs.at(-1)?.value ?? null,
+    };
+  });
 }
 
 function getChange(labs: Lab[], marker: string) {
