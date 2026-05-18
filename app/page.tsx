@@ -135,10 +135,7 @@ const markerDesign: Record<
 };
 
 function formatDate(date: string) {
-  return new Date(date).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-  });
+  return new Date(date).getFullYear().toString();
 }
 
 function formatFullDate(date: string) {
